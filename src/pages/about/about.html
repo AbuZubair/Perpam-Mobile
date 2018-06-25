@@ -1,0 +1,194 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title *ngIf="!isSearchbarOpened">
+      Jadwal Dokter
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+      <ion-item-group>  
+        <ion-item-divider color="light">Spesialis Anak</ion-item-divider>
+        <ion-list> 
+          <ion-item *ngFor="let dokterAnak of dokterAnak" text-wrap>
+            <ion-thumbnail item-left>
+              <img src="{{ dokterAnak.img }}">
+            </ion-thumbnail>
+            <h2>{{ dokterAnak.name }}</h2>
+            <p>{{ dokterAnak.jdwl }}</p>
+            <button ion-button (click)="gotoAppointPage()">Booking</button>
+          </ion-item>
+        </ion-list>
+      </ion-item-group> 
+
+      <ion-item-group>  
+        <ion-item-divider color="light">Spesialis Mata</ion-item-divider>
+        <ion-list> 
+          <ion-item *ngFor="let dokterMata of dokterMata" text-wrap>
+            <ion-thumbnail item-left>
+              <img src="{{ dokterMata.img }}">
+            </ion-thumbnail>
+            <h2>{{ dokterMata.name }}</h2>
+            <p>{{ dokterMata.jdwl }}</p>
+            <button ion-button (click)="gotoAppointPage()">Booking</button>
+          </ion-item>
+        </ion-list>
+      </ion-item-group> 
+
+      <ion-item-group>  
+        <ion-item-divider color="light">Spesialis Bedah</ion-item-divider>
+        <ion-list> 
+          <ion-item *ngFor="let dokterBedah of dokterBedah" text-wrap>
+            <ion-thumbnail item-left>
+              <img src="{{ dokterBedah.img }}">
+            </ion-thumbnail>
+            <h2>{{ dokterBedah.name }}</h2>
+            <p>{{ dokterBedah.jdwl }}</p>
+            <button ion-button (click)="gotoAppointPage()">Booking</button>
+          </ion-item>
+        </ion-list>
+      </ion-item-group> 
+
+      <ion-item-group>  
+        <ion-item-divider color="light">Spesialis Syaraf</ion-item-divider>
+        <ion-list> 
+          <ion-item *ngFor="let dokterSyaraf of dokterSyaraf" text-wrap>
+            <ion-thumbnail item-left>
+              <img src="{{ dokterSyaraf.img }}">
+            </ion-thumbnail>
+            <h2>{{ dokterSyaraf.name }}</h2>
+            <p>{{ dokterSyaraf.jdwl }}</p>
+            <button ion-button (click)="gotoAppointPage()">Booking</button>
+          </ion-item>
+        </ion-list>
+      </ion-item-group> 
+
+      <ion-item-group>  
+        <ion-item-divider color="light">Spesialis Kandungan dan Kebidanan</ion-item-divider>
+        <ion-list> 
+          <ion-item *ngFor="let dokterObgyn of dokterObgyn" text-wrap>
+            <ion-thumbnail item-left>
+              <img src="{{ dokterObgyn.img }}">
+            </ion-thumbnail>
+            <h2>{{ dokterObgyn.name }}</h2>
+            <p>{{ dokterObgyn.jdwl }}</p>
+            <button ion-button (click)="gotoAppointPage()">Booking</button>
+          </ion-item>
+        </ion-list>
+      </ion-item-group> 
+
+      <ion-item-group>  
+        <ion-item-divider color="light">Spesialis Penyakit Dalam</ion-item-divider>
+        <ion-list> 
+          <ion-item *ngFor="let dokterInternist of dokterInternist" text-wrap>
+            <ion-thumbnail item-left>
+              <img src="{{ dokterInternist.img }}">
+            </ion-thumbnail>
+            <h2>{{ dokterInternist.name }}</h2>
+            <p>{{ dokterInternist.jdwl }}</p>
+            <button ion-button (click)="gotoAppointPage()">Booking</button>
+          </ion-item>
+        </ion-list>
+      </ion-item-group> 
+
+      <ion-item-group>  
+        <ion-item-divider color="light">Spesialis Paru</ion-item-divider>
+        <ion-list> 
+          <ion-item *ngFor="let dokterParu of dokterParu" text-wrap>
+            <ion-thumbnail item-left>
+              <img src="{{ dokterParu.img }}">
+            </ion-thumbnail>
+            <h2>{{ dokterParu.name }}</h2>
+            <p>{{ dokterParu.jdwl }}</p>
+            <button ion-button (click)="gotoAppointPage()">Booking</button>
+          </ion-item>
+        </ion-list>
+      </ion-item-group> 
+
+      <ion-item-group>  
+        <ion-item-divider color="light">Spesialis Orthopedi</ion-item-divider>
+        <ion-list> 
+          <ion-item *ngFor="let dokterOrtho of dokterOrtho" text-wrap>
+            <ion-thumbnail item-left>
+              <img src="{{ dokterOrtho.img }}">
+            </ion-thumbnail>
+            <h2>{{ dokterOrtho.name }}</h2>
+            <p>{{ dokterOrtho.jdwl }}</p>
+            <button ion-button (click)="gotoAppointPage()">Booking</button>
+          </ion-item>
+        </ion-list>
+      </ion-item-group>
+
+      <ion-item-group>  
+        <ion-item-divider color="light">Spesialis Kulit dan Kelamin</ion-item-divider>
+        <ion-list> 
+          <ion-item *ngFor="let dokterKulit of dokterKulit" text-wrap>
+            <ion-thumbnail item-left>
+              <img src="{{ dokterKulit.img }}">
+            </ion-thumbnail>
+            <h2>{{ dokterKulit.name }}</h2>
+            <p>{{ dokterKulit.jdwl }}</p>
+            <button ion-button (click)="gotoAppointPage()">Booking</button>
+          </ion-item>
+        </ion-list>
+      </ion-item-group>
+
+      <ion-item-group>  
+        <ion-item-divider color="light">Spesialis Gigi</ion-item-divider>
+        <ion-list> 
+          <ion-item *ngFor="let dokterGigi of dokterGigi" text-wrap>
+            <ion-thumbnail item-left>
+              <img src="{{ dokterGigi.img }}">
+            </ion-thumbnail>
+            <h2>{{ dokterGigi.name }}</h2>
+            <p>{{ dokterGigi.jdwl }}</p>
+            <button ion-button (click)="gotoAppointPage()">Booking</button>
+          </ion-item>
+        </ion-list>
+      </ion-item-group>
+
+      <ion-item-group>  
+        <ion-item-divider color="light">Spesialis THT</ion-item-divider>
+        <ion-list> 
+          <ion-item *ngFor="let dokterTHT of dokterTHT" text-wrap>
+            <ion-thumbnail item-left>
+              <img src="{{ dokterTHT.img }}">
+            </ion-thumbnail>
+            <h2>{{ dokterTHT.name }}</h2>
+            <p>{{ dokterTHT.jdwl }}</p>
+            <button ion-button (click)="gotoAppointPage()">Booking</button>
+          </ion-item>
+        </ion-list>
+      </ion-item-group>
+
+      <ion-item-group>  
+        <ion-item-divider color="light">Spesialis Rehab Medis</ion-item-divider>
+        <ion-list> 
+          <ion-item *ngFor="let dokterRehab of dokterRehab" text-wrap>
+            <ion-thumbnail item-left>
+              <img src="{{ dokterRehab.img }}">
+            </ion-thumbnail>
+            <h2>{{ dokterRehab.name }}</h2>
+            <p>{{ dokterRehab.jdwl }}</p>
+            <button ion-button (click)="gotoAppointPage()">Booking</button>
+          </ion-item>
+        </ion-list>
+      </ion-item-group>
+
+      <ion-item-group>  
+        <ion-item-divider color="light">Spesialis Radiologi</ion-item-divider>
+        <ion-list> 
+          <ion-item *ngFor="let dokterRadiologi of dokterRadiologi" text-wrap>
+            <ion-thumbnail item-left>
+              <img src="{{ dokterRadiologi.img }}">
+            </ion-thumbnail>
+            <h2>{{ dokterRadiologi.name }}</h2>
+            <p>{{ dokterRadiologi.jdwl }}</p>
+            <button ion-button (click)="gotoAppointPage()">Booking</button>
+          </ion-item>
+        </ion-list>
+      </ion-item-group>
+
+     
+    
+</ion-content>

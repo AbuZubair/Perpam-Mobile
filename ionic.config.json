@@ -1,0 +1,8 @@
+{
+  "name": "Permata Pamulang Apps",
+  "app_id": "",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}

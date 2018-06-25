@@ -1,0 +1,104 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Edit Profile</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form [formGroup]="todo" (ngSubmit)="logForm()">
+    <ion-list>
+         <ion-item>
+            <ion-label floating>Nama Pasien</ion-label>
+            <ion-input type="text" [(ngModel)]="user.name" formControlName="name"></ion-input>
+          </ion-item>
+  
+         <ion-item>
+            <ion-label floating>Jenis Kelamin</ion-label>
+            <ion-select [(ngModel)]="user.jk" formControlName="jk"formControlName="jk">
+              <ion-option value="pria">Laki-laki</ion-option>
+              <ion-option value="perempuan">Perempuan</ion-option>
+            </ion-select> 
+          </ion-item>
+  
+          <ion-item>
+            <ion-label floating>Tempat Lahir</ion-label>
+            <ion-input type="text" [(ngModel)]="user.tl"formControlName="tl"></ion-input>
+          </ion-item>
+         
+          <ion-item>
+            <ion-label floating>Tanggal Lahir Pasien (mm/dd/yyyy)</ion-label>
+            <ion-datetime displayFormat="MM/DD/YYYY" pickerFormat="MMMM DD YYYY" [(ngModel)]="user.myDate" formControlName="myDate"></ion-datetime>
+          </ion-item>
+  
+          <ion-item>
+            <ion-label floating>Nama Suami/Ayah</ion-label>
+            <ion-input type="text" [(ngModel)]="user.ns" formControlName="ns"></ion-input>
+          </ion-item>
+  
+          <ion-item>
+            <ion-label floating>Alamat</ion-label>
+            <ion-textarea rows="5" [(ngModel)]="user.almt" formControlName="almt"></ion-textarea>
+          </ion-item>
+          
+          <ion-item>
+            <ion-label floating>Kota / Kabupaten</ion-label>
+            <ion-select (ionChange)="setDistrictValues(pasienbaru.sCity)" [(ngModel)]="pasienbaru.sCity" formControlName="cities">
+              <ion-option [value]="sCity" *ngFor="let sCity of city">{{sCity.name}}</ion-option>
+            </ion-select>
+            
+          </ion-item>
+  
+          <ion-item *ngIf="selectedDistricts">
+            <ion-label floating>Kecamatan</ion-label>
+            <ion-select (ionChange)="setKlhValues(pasienbaru.sDistrict)" [(ngModel)]="pasienbaru.sDistrict" formControlName="sDistrict">
+              <ion-option [value]="sDistrict" *ngFor="let sDistrict of selectedDistricts">{{sDistrict.name}}</ion-option>
+            </ion-select>
+          </ion-item>
+          
+          <ion-item>
+            <ion-label floating>Kode Pos</ion-label>
+            <ion-input type="number" [(ngModel)]="user.kp" formControlName="kp"></ion-input>
+          </ion-item>
+  
+          <ion-item>
+            <ion-label floating>No. Telepon/HP</ion-label>
+            <ion-input type="number" [(ngModel)]="user.no" formControlName="no"></ion-input>
+          </ion-item>
+        
+          <ion-item>
+            <ion-label floating>Agama</ion-label>
+            <ion-select [(ngModel)]="user.agama" formControlName="agama">
+              <ion-option value="islam">Islam</ion-option>
+              <ion-option value="kristen">Kristen</ion-option>
+              <ion-option value="katolik">Katolik</ion-option>
+              <ion-option value="hindu">Hindu</ion-option>
+              <ion-option value="budha">Budha</ion-option>
+              <ion-option value="other">Other</ion-option>
+            </ion-select> 
+          </ion-item> 
+  
+          <ion-item no-border>
+            <button ion-button type="submit" large color="danger" [disabled]="!todo.valid" (click)="updatePatient(
+              user.name,
+              user.jk,
+              user.tl,
+              user.myDate,
+              user.ns,
+              user.almt,
+              pasienbaru.sCity,
+              pasienbaru.sDistrict,
+              user.sKlh,
+              user.kp,
+              user.no,
+              user.agama
+              );showToast('top')">
+                Edit
+              </button>
+          </ion-item>
+    </ion-list>
+  </form>
+
+</ion-content>

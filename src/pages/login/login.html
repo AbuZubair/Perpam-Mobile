@@ -1,0 +1,28 @@
+
+<ion-content padding class="login">
+  <img src="assets/imgs/logo-Copy.jpg">
+  
+  <ion-list class="login" id="list">
+
+  <ion-item class="login">
+    <ion-label floating>Email</ion-label>
+    <ion-input type="text" #uname></ion-input>
+  </ion-item>
+
+  <ion-item class="login">
+    <ion-label floating>Password</ion-label>
+    <ion-input type="password" #password></ion-input>
+  </ion-item>
+
+</ion-list>
+
+  <button ion-button block large type="submit"  (click)="signin()">
+      Sign In
+    </button>
+
+<div class="link login" >
+  <p center>Don't have an account? &nbsp; <a href="#" (click)="gotoregPage()">Sign Up</a></p>
+  <p center><a href="#" (click)="gotoresetpwdPage()"> Forgot Password? </a></p>
+</div>  
+
+</ion-content>

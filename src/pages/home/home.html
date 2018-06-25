@@ -1,0 +1,38 @@
+
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Home</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="logout()">
+        Logout &nbsp; <ion-icon ios="ios-exit" md="md-exit"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="card-background-page">
+  <ion-card>
+    <div Class="fancybutton"  (click)="gopatnewPage()">
+      <img src="assets/imgs/IMG_8232.JPG"/> 
+      <div class="card-title">Patient Registration</div>
+      <div class="card-subtitle">Registration in here</div>
+    </div>
+  </ion-card>
+
+  <ion-card>
+    <div Class="fancybutton"  (click)="gopatoldPage()">
+      <img src="assets/imgs/VVIP.JPG"/>
+      <div class="card-title">Appointment</div>
+      <div class="card-subtitle">Pribadi / Asuransi</div>
+    </div>
+  </ion-card>
+
+  <ion-card>
+    <div Class="fancybutton"  (click)="gobpjsPage()">
+      <img src="assets/imgs/IMG_8381.JPG"/>
+      <div class="card-title">BPJS</div>
+      <div class="card-subtitle"></div>
+    </div>
+  </ion-card>
+
+</ion-content>

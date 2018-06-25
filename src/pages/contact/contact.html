@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      Info
+    </ion-title>
+  </ion-navbar>
+
+  <ion-toolbar no-border-top >
+      <ion-segment [(ngModel)]="contact">
+        <ion-segment-button value="contactus">
+         Contact Us
+        </ion-segment-button>
+        <ion-segment-button value="status">
+          Your Appointment
+        </ion-segment-button>
+      </ion-segment>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content padding>
+    <div [ngSwitch]="contact">
+        <div *ngSwitchCase="'contactus'" class="ctc">
+           <ion-slides pager>
+             <!--    <ion-slide *ngFor="let slide of slides">
+                  <img [src]="slide.image" class="slide-image"/>
+                  <h2 class="slide-title" [innerHTML]="slide.title"></h2>
+                  <a href="https://goo.gl/maps/sSwmSoQZiWA2"><p [innerHTML]="slide.description" class="slide-des" ></p></a>
+                </ion-slide>  
+              -->
+            <ion-slide>
+                  <img src="assets/imgs/point.png" class="slide-image"/>
+                  <h2>Our Location</h2>
+                  <a href="https://goo.gl/maps/sSwmSoQZiWA2">
+                   <p id="loc">Jl. Raya Siliwangi No.1A, Pamulang Tangerang Selatan</p> 
+                  </a>
+            </ion-slide>   
+            <ion-slide>
+              <img src="assets/imgs/tel.jpg" class="slide-image"/>
+              <h2>Call Center</h2>
+              <p>
+                <b>IGD . (021) 747 09 072 </b> <br> (021) 747 04 999 | 747 09 079 
+              </p>
+             </ion-slide>          
+              <ion-slide>
+                  <img src="assets/imgs/web.png" class="slide-image"/> <br>
+                  <a href="http://rspermatapamulang.co.id/">
+                      More Info
+                    <ion-icon name="arrow-forward"></ion-icon>
+                  </a>
+            </ion-slide>
+          </ion-slides>
+        </div>
+
+        <div *ngSwitchCase="'status'"> 
+            <ion-searchbar [(ngModel)]="terms" placeholder="Search Pasien"></ion-searchbar>
+            <button ion-button type="button" (click)="sort()">Sort</button>
+          
+            <ion-list *ngIf='terms'>
+              <ion-item *ngFor="let user of users | async | search : terms | sort: {property: column, order: order}"  
+              detail-push >
+                <h2> {{ user.name}} </h2>
+                <p>Tanggal Perjanjian : {{ user.tgl | date: 'dd/MM/yyyy'}} </p>
+                <button ion-button item-end navPush="ViewstatusPage" [navParams]="{user: user}">View</button>
+              </ion-item>   
+            </ion-list>
+        </div>
+    </div>
+</ion-content>

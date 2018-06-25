@@ -1,0 +1,45 @@
+page-contact {
+    .toolbar-background {
+        background: #fff;
+        border-color: transparent;
+      }
+    
+      .slide-zoom {
+        height: 100%;
+      }
+    
+      .slide-title {
+        margin-top: 1.8rem;
+      }
+    
+      .slide-image {
+        max-height: 50%;
+        max-width: 60%;
+        margin: 20px 0;
+      }
+
+      a{
+        text-decoration: none;
+      }
+
+    
+      b {
+        font-weight: 500;
+      }
+    
+      .ctc p {
+        padding: 10px 0;
+        font-size: 18px;
+        line-height: 1.5;
+        color: #60646B;
+        
+    
+        b {
+          color: #000000;
+        }
+    }
+
+    #loc{
+      text-decoration:underline;
+    }
+}

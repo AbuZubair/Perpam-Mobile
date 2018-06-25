@@ -1,0 +1,23 @@
+page-bpjs {
+   
+.my-container {
+    position: relative;
+    overflow: hidden;
+    height:100%;
+}
+.my-container h1 {
+    position: relative;
+    z-index: 2;
+} 
+.my-container img {
+    position: absolute;
+    left: 0;
+    top: 20%;
+    width: 100%;
+    height: auto;
+    opacity: 0.6;
+}
+
+
+    
+}

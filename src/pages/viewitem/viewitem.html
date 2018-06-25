@@ -1,0 +1,103 @@
+<!--
+  Generated template for the ViewitemPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>{{user?.name}} </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list no-lines>
+    <ion-item-group>
+      <ion-item-divider color="light">Nama</ion-item-divider>
+      <ion-item> {{user.name}}</ion-item>
+    </ion-item-group>
+
+    <ion-item-group>
+      <ion-item-divider color="light">Tanggal Lahir Pasien (YYYY/MM/DD)</ion-item-divider>
+      <ion-item > {{user.myDate}}</ion-item>
+    </ion-item-group>
+
+    <ion-item-group>
+      <ion-item-divider color="light">Alamat</ion-item-divider>
+      <ion-item > {{user.almt}}</ion-item>
+    </ion-item-group>
+
+    <ion-item-group>
+      <ion-item-divider color="light">No. Telepon/HP</ion-item-divider>
+      <ion-item > {{user.no}}</ion-item>
+    </ion-item-group>
+
+</ion-list>
+
+<br><h2>Appointment</h2>
+
+<form [formGroup]="todo" (ngSubmit)="logForm()">
+<ion-list>
+    <ion-item>
+      <ion-label floating>Guarantor</ion-label>
+      <ion-select [(ngModel)]="appointment.gr" formControlName="gr">
+        <ion-option value="Pribadi">Pribadi</ion-option>
+        <ion-option value="Asuransi">Asuransi</ion-option>
+      </ion-select> 
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Pernah Berobat di Rumah Sakit Permata Pamulang?</ion-label>
+      <ion-select [(ngModel)]="appointment.o_n" formControlName="o_n">
+        <ion-option value="pasien lama">Pernah</ion-option>
+        <ion-option value="pasien baru">Belum</ion-option>
+      </ion-select> 
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Specialist</ion-label>
+      <ion-select (ionChange)="setDoctorValues(appointment.spl)" [(ngModel)]="appointment.spl" formControlName="spl">
+        <ion-option [value]="spl" *ngFor="let spl of spls">{{spl.name}} </ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item *ngIf="selectedDoctor">
+        <ion-label floating>Dokter</ion-label>
+        <ion-select [(ngModel)]="appointment.dr" formControlName="dr">
+          <ion-option [value]="dr" *ngFor="let dr of selectedDoctor" >{{dr.name}}</ion-option>
+        </ion-select>
+    </ion-item>
+
+    <ion-item>
+        <ion-label floating>Tanggal Perjanjian (mm/dd/yyyy)</ion-label>
+        <ion-datetime displayFormat="MM/DD/YYYY" pickerFormat="MMMM DD YYYY" [(ngModel)]="appointment.tgl" formControlName="tgl"></ion-datetime>
+    </ion-item>
+
+    <ion-item class="hidden">
+        <ion-input type="text" [(ngModel)]="appointment.status" formControlName="status"></ion-input>
+      </ion-item>
+
+</ion-list>
+
+
+<button ion-button type="submit" large color="danger" [disabled]="!todo.valid" (click)="createAppoint(
+            user.name,
+            user.myDate,
+            user.almt,
+            user.no,
+            appointment.gr,
+            appointment.o_n,
+            appointment.spl,
+            appointment.dr,
+            appointment.tgl,
+            appointment.status
+            );showToast('top')">
+              Submit
+</button>
+</form>
+
+</ion-content>
